@@ -1,0 +1,8 @@
+version: "3.5"
+services:
+  my-app:
+    image: beksultancs/docker-app:1.1
+    ports:
+      - "5050:5050"
+    environment:
+      - "SPRING_PROFILES_ACTIVE=test"
