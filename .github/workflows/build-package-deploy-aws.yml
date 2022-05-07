@@ -39,7 +39,7 @@ jobs:
       uses: DylanBDev/beanstalk-deploy@initial
       with:
         aws_access_key: ${{secrets.AWS_ACCESS_KEY_ID}}
-        aws_secret_key: ${{secrets.AWS_SECRET_ACCESS_ID}}
+        aws_secret_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
         application_name: spring-boot-app
         environment_name: springbootapp-env
         version_label: springbootapp-${{steps.time.outputs.time}}
