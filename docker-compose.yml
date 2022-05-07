@@ -2,10 +2,10 @@ version: '3'
 services:
   spring-boot-prod-docker-app:
     image: beksultancs/docker-app:2.0
-    build:
-      context: ./
-      dockerfile: Dockerfile
+#    build:
+#      context: ./
+#      dockerfile: Dockerfile
     ports:
-      - '8000:5000'
+      - '80:5000'
     environment:
       - "SPRING_PROFILES_ACTIVE=prod"
