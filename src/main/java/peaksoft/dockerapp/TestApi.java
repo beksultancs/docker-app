@@ -22,6 +22,11 @@ public class TestApi {
         );
     }
 
+    @GetMapping("/test")
+    public String welcomeToPeaksoft() {
+        return "<h1 style=\"text-align: center;\">Welcome To Peaksoft</h1>";
+    }
+
     @GetMapping("active/profile")
     public Map<String, String> showActiveProfile() {
         return Map.of(
