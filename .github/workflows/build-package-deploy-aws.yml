@@ -24,6 +24,17 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Create Timestamp for Version Info
+      id: time
+      uses: nansm/get-time-action@v1.1
+      with:
+        format: 'YYYY-MM-DD-HH-mm_ss'
+    - name: Make Artifact Available
+      uses: actions/upload-artifact@v2
+      with:
+        name: "Artifact-${{steps.time.outputs.time}}"
+        path: target/
+        retention-day: 5
     - name: Beanstalk Deploy for JAR
       uses: DylanBDev/beanstalk-deploy@initial
       with:
